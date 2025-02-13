@@ -1,2 +1,1 @@
-"use strict";
-// TODO: Create a custom validation for float number
+//# sourceMappingURL=float.validator.js.map

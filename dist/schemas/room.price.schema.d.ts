@@ -50,4 +50,3 @@ export declare const GetRoomPriceByDateSchema: z.ZodObject<{
     price: number;
     roomId: number;
 }>;
-//# sourceMappingURL=room.price.schema.d.ts.map

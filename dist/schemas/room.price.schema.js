@@ -1,20 +1,24 @@
-import { z } from 'zod';
-export const SetRoomPriceSchema = z.array(z.object({
-    startDate: z.date(),
-    endDate: z.date(),
-    price: z.number().min(0).finite(),
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetRoomPriceByDateSchema = exports.GetRoomPriceByPeriodSchema = exports.SetRoomPriceSchema = void 0;
+const zod_1 = require("zod");
+exports.SetRoomPriceSchema = zod_1.z.array(zod_1.z.object({
+    startDate: zod_1.z.date(),
+    endDate: zod_1.z.date(),
+    price: zod_1.z.number().min(0).finite(),
 }));
-export const GetRoomPriceByPeriodSchema = z.array(z.object({
-    id: z.number(),
-    roomId: z.number(),
-    startDate: z.string(),
-    endDate: z.string(),
-    price: z.number(),
+exports.GetRoomPriceByPeriodSchema = zod_1.z.array(zod_1.z.object({
+    id: zod_1.z.number(),
+    roomId: zod_1.z.number(),
+    startDate: zod_1.z.string(),
+    endDate: zod_1.z.string(),
+    price: zod_1.z.number(),
 }));
-export const GetRoomPriceByDateSchema = z.object({
-    id: z.number(),
-    roomId: z.number(),
-    startDate: z.string(),
-    endDate: z.string(),
-    price: z.number(),
+exports.GetRoomPriceByDateSchema = zod_1.z.object({
+    id: zod_1.z.number(),
+    roomId: zod_1.z.number(),
+    startDate: zod_1.z.string(),
+    endDate: zod_1.z.string(),
+    price: zod_1.z.number(),
 });
+//# sourceMappingURL=room.price.schema.js.map

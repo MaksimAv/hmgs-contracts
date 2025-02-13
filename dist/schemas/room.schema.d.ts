@@ -128,4 +128,3 @@ export declare const UpdateRoomRequestSchema: z.ZodObject<{
     minStayDays?: number | undefined;
     maxStayDays?: number | undefined;
 }>;
-//# sourceMappingURL=room.schema.d.ts.map

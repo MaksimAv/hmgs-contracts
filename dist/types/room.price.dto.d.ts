@@ -3,4 +3,3 @@ import { GetRoomPriceByDateSchema, GetRoomPriceByPeriodSchema, SetRoomPriceSchem
 export type SetRoomPriceDto = z.infer<typeof SetRoomPriceSchema>;
 export type GetRoomPriceByPeriodDto = z.infer<typeof GetRoomPriceByPeriodSchema>;
 export type GetRoomPriceByDateDto = z.infer<typeof GetRoomPriceByDateSchema>;
-//# sourceMappingURL=room.price.dto.d.ts.map
