@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export declare const SetRoomPriceSchema: z.ZodArray<z.ZodObject<{
+export declare const SetRoomPriceSchema: z.ZodObject<{
     startDate: z.ZodDate;
     endDate: z.ZodDate;
     price: z.ZodNumber;
@@ -11,7 +11,7 @@ export declare const SetRoomPriceSchema: z.ZodArray<z.ZodObject<{
     startDate: Date;
     endDate: Date;
     price: number;
-}>, "many">;
+}>;
 export declare const GetRoomPriceByPeriodSchema: z.ZodArray<z.ZodObject<{
     id: z.ZodNumber;
     roomId: z.ZodNumber;

@@ -1,12 +1,10 @@
 import { z } from 'zod';
 
-export const SetRoomPriceSchema = z.array(
-  z.object({
-    startDate: z.date(),
-    endDate: z.date(),
-    price: z.number().min(0).finite(),
-  }),
-);
+export const SetRoomPriceSchema = z.object({
+  startDate: z.date(),
+  endDate: z.date(),
+  price: z.number().min(0).finite(),
+});
 
 export const GetRoomPriceByPeriodSchema = z.array(
   z.object({
