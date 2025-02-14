@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "husky",
-    "build": "tsc",
+    "build": "npm run clean && tsc",
     "clean": "rimraf dist"
   },
   "author": "",
