@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
 export const SetRoomPriceSchema = z.object({
-  startDate: z.date(),
-  endDate: z.date(),
+  startDate: z.string().date(),
+  endDate: z.string().date(),
   price: z.number().min(0).finite(),
 });
 

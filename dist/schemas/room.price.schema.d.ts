@@ -1,15 +1,15 @@
 import { z } from 'zod';
 export declare const SetRoomPriceSchema: z.ZodObject<{
-    startDate: z.ZodDate;
-    endDate: z.ZodDate;
+    startDate: z.ZodString;
+    endDate: z.ZodString;
     price: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     price: number;
 }, {
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     price: number;
 }>;
 export declare const GetRoomPriceByPeriodSchema: z.ZodArray<z.ZodObject<{
