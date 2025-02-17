@@ -1,17 +1,9 @@
 import { z } from 'zod';
-
-const roomStatusArray = [
-  'AVAILABLE_FOR_BOOKING',
-  'OUT_OF_ORDER',
-  'STAYING',
-  'LONG_STAYING',
-  'BOOKED',
-  'MAINTENANCE',
-] as const;
+import { RoomStatusRequestEnum } from 'src/types/enums';
 
 export const SetRoomStatusSchema = z
   .object({
-    status: z.enum(roomStatusArray),
+    status: z.nativeEnum(RoomStatusRequestEnum),
     startDate: z
       .string()
       .transform((value) => new Date(value))
