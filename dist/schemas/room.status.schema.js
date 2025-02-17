@@ -1,10 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetRoomPriceSchema = exports.SetRoomPriceSchema = void 0;
+exports.SetRoomStatusSchema = void 0;
 const zod_1 = require("zod");
-exports.SetRoomPriceSchema = zod_1.z
+const roomStatusArray = [
+    'AVAILABLE_FOR_BOOKING',
+    'OUT_OF_ORDER',
+    'STAYING',
+    'LONG_STAYING',
+    'BOOKED',
+    'MAINTENANCE',
+];
+exports.SetRoomStatusSchema = zod_1.z
     .object({
-    price: zod_1.z.number().min(0).finite(),
+    status: zod_1.z.enum(roomStatusArray),
     startDate: zod_1.z
         .string()
         .transform((value) => new Date(value))
@@ -18,11 +26,4 @@ exports.SetRoomPriceSchema = zod_1.z
     params: { code: zod_1.z.ZodIssueCode.too_big },
     path: ['startDate'],
 });
-exports.GetRoomPriceSchema = zod_1.z.object({
-    id: zod_1.z.number(),
-    roomId: zod_1.z.number(),
-    startDate: zod_1.z.date(),
-    endDate: zod_1.z.date(),
-    price: zod_1.z.number(),
-});
-//# sourceMappingURL=room.price.schema.js.map
+//# sourceMappingURL=room.status.schema.js.map

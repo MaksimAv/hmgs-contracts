@@ -2,19 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateRoomRequestSchema = exports.GetRoomResponseSchema = exports.CreateRoomRequestSchema = void 0;
 const zod_1 = require("zod");
+const roomVisibilityArray = ['PUBLIC', 'PRIVATE'];
 exports.CreateRoomRequestSchema = zod_1.z.object({
-    title: zod_1.z.string().min(1),
-    slug: zod_1.z.string().min(1),
-    description: zod_1.z.string(),
-    regularPrice: zod_1.z.number().min(0).finite(),
-    currencyCode: zod_1.z.string().min(1),
-    visibility: zod_1.z.string().min(1),
-    capacity: zod_1.z.number().min(1),
-    size: zod_1.z.number().min(1).finite().optional(),
-    floor: zod_1.z.number().min(-99).finite().optional(),
-    categoryId: zod_1.z.number().min(1),
+    title: zod_1.z.string().min(1).max(256),
+    slug: zod_1.z.string().min(1).max(128),
+    description: zod_1.z.string().max(4096).optional(),
+    capacity: zod_1.z.number().min(1).max(1024).finite(),
+    categoryId: zod_1.z.number().min(1).finite(),
+    floor: zod_1.z.number().min(-99).max(1024).finite(),
+    size: zod_1.z.number().min(1).max(4096).finite(),
     minStayDays: zod_1.z.number().min(1).finite(),
     maxStayDays: zod_1.z.number().min(1).finite(),
+    visibility: zod_1.z.enum(roomVisibilityArray),
+    regularPrice: zod_1.z.number().min(0).finite(),
+    currencyCode: zod_1.z.string().min(1),
 });
 exports.GetRoomResponseSchema = zod_1.z.object({
     id: zod_1.z.number(),

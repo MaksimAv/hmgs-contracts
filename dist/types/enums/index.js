@@ -14,11 +14,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./schemas/room.schema"), exports);
-__exportStar(require("./schemas/room.price.schema"), exports);
-__exportStar(require("./schemas/room.status.schema"), exports);
-__exportStar(require("./types/enums"), exports);
-__exportStar(require("./types/room"), exports);
-__exportStar(require("./types/room.price"), exports);
-__exportStar(require("./types/room.status"), exports);
+__exportStar(require("./room.status.enum"), exports);
+__exportStar(require("./room.visibility.enum"), exports);
 //# sourceMappingURL=index.js.map
