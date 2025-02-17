@@ -1,8 +1,17 @@
 import { z } from 'zod';
 
-export const SetRoomPriceSchema = z
+const roomStatusArray = [
+  'AVAILABLE_FOR_BOOKING',
+  'OUT_OF_ORDER',
+  'STAYING',
+  'LONG_STAYING',
+  'BOOKED',
+  'MAINTENANCE',
+] as const;
+
+export const SetRoomStatusSchema = z
   .object({
-    price: z.number().min(0).finite(),
+    status: z.enum(roomStatusArray),
     startDate: z
       .string()
       .transform((value) => new Date(value))
@@ -16,11 +25,3 @@ export const SetRoomPriceSchema = z
     params: { code: z.ZodIssueCode.too_big },
     path: ['startDate'],
   });
-
-export const GetRoomPriceSchema = z.object({
-  id: z.number(),
-  roomId: z.number(),
-  startDate: z.date(),
-  endDate: z.date(),
-  price: z.number(),
-});
