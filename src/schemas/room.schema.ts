@@ -1,18 +1,20 @@
 import { z } from 'zod';
 
+const roomVisibilityArray = ['PUBLIC', 'PRIVATE'] as const;
+
 export const CreateRoomRequestSchema = z.object({
-  title: z.string().min(1),
-  slug: z.string().min(1),
-  description: z.string(),
-  regularPrice: z.number().min(0).finite(),
-  currencyCode: z.string().min(1),
-  visibility: z.string().min(1),
-  capacity: z.number().min(1),
-  size: z.number().min(1).finite().optional(),
-  floor: z.number().min(-99).finite().optional(),
-  categoryId: z.number().min(1),
+  title: z.string().min(1).max(256),
+  slug: z.string().min(1).max(128),
+  description: z.string().max(4096).optional(),
+  capacity: z.number().min(1).max(1024).finite(),
+  categoryId: z.number().min(1).finite(),
+  floor: z.number().min(-99).max(1024).finite(),
+  size: z.number().min(1).max(4096).finite(),
   minStayDays: z.number().min(1).finite(),
   maxStayDays: z.number().min(1).finite(),
+  visibility: z.enum(roomVisibilityArray),
+  regularPrice: z.number().min(0).finite(),
+  currencyCode: z.string().min(1),
 });
 
 export const GetRoomResponseSchema = z.object({
