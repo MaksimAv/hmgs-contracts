@@ -38,13 +38,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
           git add dist
           git commit -m "chore: update dist [skip ci]" || exit 0
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/MaksimAv/hmgs-contracts.git HEAD:main
-      
-      - name: Create version tag
-        if: success()
-        run: |
+
           VERSION=$(node -p "require('./package.json').version")
           git tag -a "v$VERSION" -m "Release v$VERSION"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/MaksimAv/hmgs-contracts.git "v$VERSION"
