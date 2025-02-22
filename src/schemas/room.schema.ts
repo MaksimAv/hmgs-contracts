@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { RoomStatusRequestEnum } from 'src/enums';
+import { RoomStatusRequestEnum } from '../enums';
 
 export const CreateRoomRequestSchema = z.object({
   title: z.string().min(1).max(256),

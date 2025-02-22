@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { RoomStatusRequestEnum } from 'src/enums';
+import { RoomStatusRequestEnum } from '../enums';
 
 export const SetRoomStatusSchema = z
   .object({
