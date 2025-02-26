@@ -12,12 +12,8 @@ export const RegistrationUserSchema = z.object({
 });
 
 export const LoginUserSchema = z.object({
-  phone: z.string(),
+  login: z.string(),
   password: z.string(),
-});
-
-export const CreateUserSchema = RegistrationUserSchema.omit({ password: true }).extend({
-  passwordHash: z.string(),
 });
 
 export const UpdateUserSchema = RegistrationUserSchema.partial().omit({ phone: true, password: true });

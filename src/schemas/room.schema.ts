@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { RoomStatusRequestEnum } from '../enums';
+import { RoomVisibilityRequestEnum } from '../enums';
 
 export const CreateRoomRequestSchema = z.object({
   title: z.string().min(1).max(256),
@@ -11,7 +11,7 @@ export const CreateRoomRequestSchema = z.object({
   size: z.number().min(1).max(4096).finite(),
   minStayDays: z.number().min(1).finite(),
   maxStayDays: z.number().min(1).finite(),
-  visibility: z.nativeEnum(RoomStatusRequestEnum),
+  visibility: z.nativeEnum(RoomVisibilityRequestEnum),
   regularPrice: z.number().min(0).finite(),
   currencyCode: z.string().min(1),
 });
