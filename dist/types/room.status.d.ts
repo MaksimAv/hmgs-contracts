@@ -1,3 +1,3 @@
 import { z } from 'zod';
-import { SetRoomStatusSchema } from 'src/schemas/room.status.schema';
+import { SetRoomStatusSchema } from '../schemas';
 export type SetRoomStatusRequest = z.infer<typeof SetRoomStatusSchema>;

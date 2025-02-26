@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { RoomVisibilityRequestEnum } from '../enums';
 export declare const CreateRoomRequestSchema: z.ZodObject<{
     title: z.ZodString;
     slug: z.ZodString;
@@ -9,7 +10,7 @@ export declare const CreateRoomRequestSchema: z.ZodObject<{
     size: z.ZodNumber;
     minStayDays: z.ZodNumber;
     maxStayDays: z.ZodNumber;
-    visibility: z.ZodEnum<["PUBLIC", "PRIVATE"]>;
+    visibility: z.ZodNativeEnum<typeof RoomVisibilityRequestEnum>;
     regularPrice: z.ZodNumber;
     currencyCode: z.ZodString;
 }, "strip", z.ZodTypeAny, {
@@ -21,7 +22,7 @@ export declare const CreateRoomRequestSchema: z.ZodObject<{
     size: number;
     minStayDays: number;
     maxStayDays: number;
-    visibility: "PUBLIC" | "PRIVATE";
+    visibility: RoomVisibilityRequestEnum;
     regularPrice: number;
     currencyCode: string;
     description?: string | undefined;
@@ -34,7 +35,7 @@ export declare const CreateRoomRequestSchema: z.ZodObject<{
     size: number;
     minStayDays: number;
     maxStayDays: number;
-    visibility: "PUBLIC" | "PRIVATE";
+    visibility: RoomVisibilityRequestEnum;
     regularPrice: number;
     currencyCode: string;
     description?: string | undefined;
@@ -98,7 +99,7 @@ export declare const UpdateRoomRequestSchema: z.ZodObject<{
     size: z.ZodOptional<z.ZodNumber>;
     minStayDays: z.ZodOptional<z.ZodNumber>;
     maxStayDays: z.ZodOptional<z.ZodNumber>;
-    visibility: z.ZodOptional<z.ZodEnum<["PUBLIC", "PRIVATE"]>>;
+    visibility: z.ZodOptional<z.ZodNativeEnum<typeof RoomVisibilityRequestEnum>>;
     regularPrice: z.ZodOptional<z.ZodNumber>;
     currencyCode: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
@@ -111,7 +112,7 @@ export declare const UpdateRoomRequestSchema: z.ZodObject<{
     size?: number | undefined;
     minStayDays?: number | undefined;
     maxStayDays?: number | undefined;
-    visibility?: "PUBLIC" | "PRIVATE" | undefined;
+    visibility?: RoomVisibilityRequestEnum | undefined;
     regularPrice?: number | undefined;
     currencyCode?: string | undefined;
 }, {
@@ -124,7 +125,7 @@ export declare const UpdateRoomRequestSchema: z.ZodObject<{
     size?: number | undefined;
     minStayDays?: number | undefined;
     maxStayDays?: number | undefined;
-    visibility?: "PUBLIC" | "PRIVATE" | undefined;
+    visibility?: RoomVisibilityRequestEnum | undefined;
     regularPrice?: number | undefined;
     currencyCode?: string | undefined;
 }>;

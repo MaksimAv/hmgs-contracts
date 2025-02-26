@@ -2,17 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SetRoomStatusSchema = void 0;
 const zod_1 = require("zod");
-const roomStatusArray = [
-    'AVAILABLE_FOR_BOOKING',
-    'OUT_OF_ORDER',
-    'STAYING',
-    'LONG_STAYING',
-    'BOOKED',
-    'MAINTENANCE',
-];
+const enums_1 = require("../enums");
 exports.SetRoomStatusSchema = zod_1.z
     .object({
-    status: zod_1.z.enum(roomStatusArray),
+    status: zod_1.z.nativeEnum(enums_1.RoomStatusRequestEnum),
     startDate: zod_1.z
         .string()
         .transform((value) => new Date(value))

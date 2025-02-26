@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateRoomRequestSchema = exports.GetRoomResponseSchema = exports.CreateRoomRequestSchema = void 0;
 const zod_1 = require("zod");
-const roomVisibilityArray = ['PUBLIC', 'PRIVATE'];
+const enums_1 = require("../enums");
 exports.CreateRoomRequestSchema = zod_1.z.object({
     title: zod_1.z.string().min(1).max(256),
     slug: zod_1.z.string().min(1).max(128),
@@ -13,7 +13,7 @@ exports.CreateRoomRequestSchema = zod_1.z.object({
     size: zod_1.z.number().min(1).max(4096).finite(),
     minStayDays: zod_1.z.number().min(1).finite(),
     maxStayDays: zod_1.z.number().min(1).finite(),
-    visibility: zod_1.z.enum(roomVisibilityArray),
+    visibility: zod_1.z.nativeEnum(enums_1.RoomVisibilityRequestEnum),
     regularPrice: zod_1.z.number().min(0).finite(),
     currencyCode: zod_1.z.string().min(1),
 });
