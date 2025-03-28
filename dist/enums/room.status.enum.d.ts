@@ -1,8 +1,5 @@
 export declare enum RoomStatusRequestEnum {
     AVAILABLE_FOR_BOOKING = "AVAILABLE_FOR_BOOKING",
     OUT_OF_ORDER = "OUT_OF_ORDER",
-    STAYING = "STAYING",
-    LONG_STAYING = "LONG_STAYING",
-    BOOKED = "BOOKED",
     MAINTENANCE = "MAINTENANCE"
 }

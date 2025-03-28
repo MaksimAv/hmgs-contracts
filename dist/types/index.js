@@ -18,4 +18,5 @@ __exportStar(require("./room"), exports);
 __exportStar(require("./room.price"), exports);
 __exportStar(require("./room.status"), exports);
 __exportStar(require("./user"), exports);
+__exportStar(require("./booking"), exports);
 //# sourceMappingURL=index.js.map
